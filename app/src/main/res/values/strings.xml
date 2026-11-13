@@ -1,0 +1,48 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">EcoQuiz</string>
+    <string name="tagline">Learn Today, Protect Tomorrow.</string>
+    <string name="sdg_badge">UN SDG 13: Climate Action (Target 13.3)</string>
+    <string name="sdg_full_title">SDG 13 • Climate Action</string>
+    
+    <!-- Auth Strings -->
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="sign_in_sub">Log in to test your climate knowledge</string>
+    <string name="create_account">Create Account</string>
+    <string name="register_sub">Join the global movement for climate awareness</string>
+    <string name="full_name">Full Name</string>
+    <string name="username">Username</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="login_btn">Log In</string>
+    <string name="register_btn">Register</string>
+    <string name="no_account">Don\'t have an account? Register</string>
+    <string name="already_have_account">Already have an account? Log In</string>
+    
+    <!-- Home Strings -->
+    <string name="dashboard_title">EcoQuiz Dashboard</string>
+    <string name="quizzes_attempted">Quizzes Attempted</string>
+    <string name="highest_score">Highest Score</string>
+    <string name="choose_difficulty">Choose Quiz Difficulty</string>
+    <string name="action_leaderboard">Leaderboard</string>
+    <string name="action_performance">Performance History</string>
+    <string name="action_profile">Profile</string>
+    <string name="action_logout">Logout</string>
+    
+    <!-- Difficulties -->
+    <string name="diff_easy">Easy</string>
+    <string name="diff_medium">Medium</string>
+    <string name="diff_hard">Hard</string>
+    <string name="play_now">Play Now</string>
+    
+    <!-- Quiz Strings -->
+    <string name="question_counter">Question %1$d of %2$d</string>
+    <string name="btn_next">Next Question</string>
+    <string name="btn_finish">Submit Quiz</string>
+    
+    <!-- Result Strings -->
+    <string name="quiz_completed">Quiz Completed!</string>
+    <string name="play_again">Play Again</string>
+    <string name="view_performance">View Performance</string>
+    <string name="go_home">Back to Home</string>
+</resources>

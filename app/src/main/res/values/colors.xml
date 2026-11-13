@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Environmental Palette based on project specification -->
+    <color name="primary_forest_green">#1B5E20</color>
+    <color name="primary_dark_green">#0D3B13</color>
+    <color name="primary_light_green">#2E7D32</color>
+    <color name="secondary_light_green">#A5D6A7</color>
+    <color name="secondary_mint_light">#E8F5E9</color>
+    
+    <!-- Background & Surface -->
+    <color name="background_off_white">#F7FAF5</color>
+    <color name="surface_white">#FFFFFF</color>
+    <color name="card_border">#DCE8DA</color>
+
+    <!-- Accent & Alerts -->
+    <color name="accent_gold">#FFC107</color>
+    <color name="accent_gold_dark">#FFA000</color>
+    <color name="error_red">#D32F2F</color>
+    <color name="error_red_light">#FFEBEE</color>
+    <color name="success_green">#388E3C</color>
+    <color name="success_green_light">#E8F5E9</color>
+
+    <!-- Difficulty Badges -->
+    <color name="difficulty_easy">#43A047</color>
+    <color name="difficulty_medium">#FB8C00</color>
+    <color name="difficulty_hard">#E53935</color>
+
+    <!-- Typography Colors -->
+    <color name="text_primary">#1C2D1F</color>
+    <color name="text_secondary">#4A6B50</color>
+    <color name="text_muted">#758A7A</color>
+    <color name="text_white">#FFFFFF</color>
+
+    <!-- UI Elements -->
+    <color name="divider_color">#E0EAE1</color>
+    <color name="option_default_stroke">#CBD9CE</color>
+    <color name="option_selected_bg">#C8E6C9</color>
+</resources>
