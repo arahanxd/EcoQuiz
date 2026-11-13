@@ -527,7 +527,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // =========================================================================
 
     private void seedQuestions(SQLiteDatabase db) {
-        // --- 10 EASY QUESTIONS ---
+        db.beginTransaction();
+        try {
+            // --- 10 EASY QUESTIONS ---
         insertSeedQuestion(db,
                 "What is the primary gas responsible for human-induced global warming?",
                 "Oxygen", "Carbon Dioxide (CO2)", "Argon", "Helium",
@@ -709,6 +711,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "Financial penalties levied on polluting states", "Non-binding suggestions by NGOs", "National climate action plans outlining each country's post-2020 greenhouse gas reduction commitments", "Subsidies provided to oil companies",
                 "C", "Hard",
                 "NDCs are national commitments submitted every 5 years by signatories detailing domestic targets for reducing carbon emissions.");
+            db.setTransactionSuccessful();
+        } finally {
+            db.endTransaction();
+        }
     }
 
     private void insertSeedQuestion(SQLiteDatabase db, String q, String a, String b, String c, String d,

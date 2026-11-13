@@ -55,15 +55,18 @@ public class SplashActivity extends AppCompatActivity {
 
         // Delayed navigation check
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            ivLogo.clearAnimation();
+            tvTitle.clearAnimation();
+            tvTagline.clearAnimation();
+
+            Intent intent;
             if (sessionManager.isLoggedIn()) {
-                // Active session exists -> navigate directly to HomeDashboard
-                Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
-                startActivity(intent);
+                intent = new Intent(SplashActivity.this, HomeActivity.class);
             } else {
-                // No session -> navigate to Login
-                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-                startActivity(intent);
+                intent = new Intent(SplashActivity.this, LoginActivity.class);
             }
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
             finish();
         }, SPLASH_DELAY_MS);
     }

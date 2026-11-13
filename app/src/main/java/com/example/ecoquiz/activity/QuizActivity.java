@@ -10,8 +10,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.example.ecoquiz.R;
 import com.example.ecoquiz.database.DatabaseHelper;
@@ -99,6 +101,14 @@ public class QuizActivity extends AppCompatActivity {
 
         bindViews();
         setupListeners();
+
+        // Handle back press using modern OnBackPressedCallback (replaces deprecated onBackPressed)
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                confirmQuitQuiz();
+            }
+        });
 
         // Load 10 questions for this difficulty
         questionList = databaseHelper.getQuestionsByDifficulty(difficulty);
@@ -233,11 +243,11 @@ public class QuizActivity extends AppCompatActivity {
             correctCount++;
             totalScore += 10;
             tvFeedbackTitle.setText("Correct! +10 Points");
-            tvFeedbackTitle.setTextColor(getResources().getColor(R.color.success_green));
+            tvFeedbackTitle.setTextColor(ContextCompat.getColor(this, R.color.success_green));
         } else {
             incorrectCount++;
             tvFeedbackTitle.setText("Incorrect! Correct answer is: Option " + q.getCorrectOption());
-            tvFeedbackTitle.setTextColor(getResources().getColor(R.color.error_red));
+            tvFeedbackTitle.setTextColor(ContextCompat.getColor(this, R.color.error_red));
         }
 
         // Record for DB
@@ -261,7 +271,7 @@ public class QuizActivity extends AppCompatActivity {
         highlightAnswers(null, q.getCorrectOption());
 
         tvFeedbackTitle.setText("Time Out! Correct answer is: Option " + q.getCorrectOption());
-        tvFeedbackTitle.setTextColor(getResources().getColor(R.color.error_red));
+        tvFeedbackTitle.setTextColor(ContextCompat.getColor(this, R.color.error_red));
         tvExplanationText.setText(q.getExplanation() != null ? q.getExplanation() : "");
         cardExplanation.setVisibility(View.VISIBLE);
 
@@ -343,10 +353,6 @@ public class QuizActivity extends AppCompatActivity {
                 .show();
     }
 
-    @Override
-    public void onBackPressed() {
-        confirmQuitQuiz();
-    }
 
     @Override
     protected void onPause() {
